@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
 
 const DashboardContainer = styled.div`
   display: flex;
@@ -55,6 +56,7 @@ const DashboardContainer = styled.div`
 `;
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   return (
     <DashboardContainer>
       <Navbar
@@ -65,10 +67,14 @@ const Dashboard = () => {
         <div className="leftBox">
           <h3>Masters</h3>
           <div className="masters">
-            <button>BOM</button>
-            <button>Add Design</button>
-            <button>Add Raw Material</button>
-            <button>Add Customer</button>
+            <button onClick={() => navigate("/bom")}>BOM</button>
+            <button onClick={() => navigate("/add")}>Add Design</button>
+            <button onClick={() => navigate("/rawMaterial")}>
+              Add Raw Material
+            </button>
+            <button onClick={() => navigate("/customerDetails")}>
+              Add Customer
+            </button>
             <button>Add Vender</button>
             <button>Dies Master</button>
             <button>Add Colour</button>

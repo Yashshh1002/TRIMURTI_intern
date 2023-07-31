@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const LoginDiv = styled.div`
   width: 100%;
@@ -51,6 +52,7 @@ const LoginDiv = styled.div`
         border: 1px solid gray;
         outline: none;
         background: "#d0d0d0";
+        color: black;
         padding: 20px;
         max-width: 300px;
         height: 20px;
@@ -69,7 +71,6 @@ const LoginDiv = styled.div`
         }
         .login {
           background-color: green;
-          color: white;
         }
       }
     }
@@ -77,8 +78,11 @@ const LoginDiv = styled.div`
 `;
 
 const Login = () => {
+  const [user, setUser] = useState("abcd");
+
+  const navigate = useNavigate();
   const [time, setTime] = useState(new Date().toLocaleTimeString());
-  const employee = ["abcd", "abcd", "abcd", "abcd", "abcd", "abcd"];
+  const employee = ["abcd", "cdef", "pqrs", "asgdasd", "asdnajd", "cvbcxv"];
   setInterval(() => {
     setTime(new Date().toLocaleTimeString());
   }, 1000);
@@ -103,11 +107,15 @@ const Login = () => {
             <h1>Login</h1>
 
             <label htmlFor="employee">Select Employee</label>
-            <select name="" id="employee">
-              {employee.map((el, idx) => (
-                <option value={el} key={idx}>
-                  {el}
-                </option>
+
+            <select
+              name="employee"
+              id="employee"
+              onChange={(e) => setUser(e.target.value)}
+              value={user}
+            >
+              {employee.map((emp) => (
+                <option value={emp}>{emp}</option>
               ))}
             </select>
             <label htmlFor="password">Password</label>
@@ -118,7 +126,9 @@ const Login = () => {
               placeholder="Enter your password"
             />
             <div className="buttons">
-              <button className="login">Login</button>
+              <button className="login" onClick={() => navigate("/dashboard")}>
+                Login
+              </button>
               <button className="forgot">Forgot Password</button>
             </div>
           </div>
