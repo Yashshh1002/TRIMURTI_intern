@@ -4,6 +4,7 @@ import styled from "styled-components";
 const StyledNav = styled.div`
   background-color: #fff;
   border-bottom: 1px solid #e5e5e5;
+  
   img {
     border-radius: 50%;
   }
@@ -15,6 +16,7 @@ const StyledNav = styled.div`
       display: flex;
       gap: 10px;
       h3 {
+        font: Fjalla One;
         text-align: center;
       }
     }

@@ -11,6 +11,7 @@ const StyledDesign = styled.div`
   justify-content: space-around;
   align-items: center;
   min-height: 60vh;
+  
   .leftBox {
     display: flex;
     flex-direction: column;
@@ -55,21 +56,29 @@ const StyledDesign = styled.div`
       gap: 5px;
       button {
         flex: 1;
-        background-color: #7a9d54;
+        background-color: #06c23bc6;
         color: white;
         border: none;
         border-radius: 5px;
         padding: 5px;
         box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+        &:hover{
+          background-color: green;
+          transform: scale(1.05);
+        }
       }
     }
     .save {
-      background-color: #d4e2d4;
+      background-color: #09cc0997;
       color: black;
       border: none;
       border-radius: 5px;
       box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
       padding: 5px;
+      &:hover{
+          background-color: green;
+          transform: scale(1.05);
+        }
     }
     .addNew {
       border: none;
@@ -86,6 +95,10 @@ const StyledDesign = styled.div`
         border-radius: 5px;
         padding: 5px;
         box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+        &:hover{
+          background-color: #0000ff8c;
+          transform: scale(1.05);
+        }
       }
     }
     .del {
@@ -97,15 +110,23 @@ const StyledDesign = styled.div`
       gap: 5px;
       button {
         flex: 1;
-        background-color: orange;
-        color: white;
+        background-color: #fdc968;
+        color: black;
         border: none;
         border-radius: 5px;
         padding: 5px;
         box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+        &:hover{
+          background-color: orange;
+          transform: scale(1.05);
+        }
       }
       .close {
-        background-color: red;
+        background-color: #fa5c5c;
+        &:hover{
+          background-color: red;
+          transform: scale(1.05);
+        }
       }
     }
   }
@@ -130,7 +151,7 @@ const AddDesign = () => {
           <h2>Sr. No. {number}</h2>
 
           <div className="series">
-            <label htmlFor="series">Series</label>
+            <label htmlFor="series" className="inp1">Series</label>
             <select name="" id="name">
               {series.map((s, idx) => (
                 <option value={s} key={idx}>
